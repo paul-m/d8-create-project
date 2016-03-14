@@ -21,8 +21,8 @@ before_script:
 
 script:
   - cd drupal
-  # Allow PHPUnit to fail-out the tests before too much time goes by.
-  - ./vendor/bin/phpunit -c core/
+  # Arbitrary set of core PHPUnit tests to make sure phpunit can find them.
+  - ./vendor/bin/phpunit -c core/ --group Diff
   # Use run-tests.sh with --keep-results to avoid 2006 error.
   # Only run one test to keep from timing out.
   - php ./core/scripts/run-tests.sh --sqlite test.sqlite --dburl mysql://travis:@localhost/drupal --php $(which php) --class "Drupal\\system\\Tests\\Entity\\EntityFieldTest"
