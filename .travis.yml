@@ -25,4 +25,4 @@ script:
   - ./vendor/bin/phpunit -c core/ --group Diff
   # Use run-tests.sh with --keep-results to avoid 2006 error.
   # Only run one test to keep from timing out.
-  - php ./core/scripts/run-tests.sh --sqlite test.sqlite --dburl mysql://travis:@localhost/drupal --php $(which php) --class "Drupal\\system\\Tests\\Entity\\EntityFieldTest"
+  - php ./core/scripts/run-tests.sh --sqlite test.sqlite --dburl mysql://travis:@localhost/drupal --php $(which php) --class "Drupal\\Tests\\system\\Kernel\\PathHooksTest"
