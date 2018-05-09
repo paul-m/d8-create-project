@@ -22,6 +22,7 @@ before_script:
 
 script:
   - cd drupal
+  - composer run-script drupal-phpunit-upgrade
   # Arbitrary set of core PHPUnit tests to make sure phpunit can find them.
   - ./vendor/bin/phpunit -c core/ --testsuite unit
   # Use run-tests.sh with --keep-results to avoid 2006 error.
