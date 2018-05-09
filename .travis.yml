@@ -1,7 +1,8 @@
 sudo: false
 language: php
 php:
-  - 7.0
+  - 5.5
+  - 7.1
 
 mysql:
   database: drupal
@@ -11,11 +12,11 @@ mysql:
 before_script:
   # Set up the Github OAuth token.
   # Please change this in your own fork.
-  - "mkdir -p ~/.composer"
-  - cp .travis.composer.config.json ~/.composer/config.json
+#  - "mkdir -p ~/.composer"
+#  - cp .travis.composer.config.json ~/.composer/config.json
   - composer selfupdate --no-progress
   # Try to use composer to create a Drupal 8 project.
-  - composer create-project drupal/drupal drupal 8.5.* --no-progress
+  - composer create-project drupal/drupal drupal 8.6.* --no-progress
   # Create a database.
   - mysql -e 'create database drupal;'
 
